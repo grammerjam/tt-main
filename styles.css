@@ -1,0 +1,42 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white; 
+}
+
+#container {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  */
+  display: grid;
+  grid-template-columns: repeat(2, 350px);
+  grid-template-rows: repeat(2, 350px);
+  justify-content: center;
+  align-content: center;
+  gap: .25em;
+padding: 1em;
+}
+
+.square {
+  background-color: white;
+  border: 3px solid black;
+}
+
+#footer {
+  text-align: center;
+  background-color: white; 
+}
+
+@media only screen and (max-width: 725px) {
+  #container {
+    grid-template-columns: 350px;
+    grid-template-rows: repeat(4, 350px);
+    gap: 1em;
+  }
+
+}
