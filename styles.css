@@ -19,7 +19,7 @@ body {
   justify-content: center;
   align-content: center;
   gap: .25em;
-padding: 1em;
+  padding: 1em;
 }
 
 .square {
