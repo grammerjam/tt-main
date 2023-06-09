@@ -29,14 +29,14 @@ header {
   height: 100%;
 }
 
-.background-container {
+.header-background {
   position: relative;
   width: 100%;
   height: 35vh;
   overflow: hidden;
 }
 
-.background-container img {
+.header-background img {
   border: 1px solid red;
   position: absolute;
   width: 100%;
@@ -60,10 +60,16 @@ header {
 
 #phone-group {
   z-index: 3;
-  background: url('./img/phone_group.png') no-repeat center center / contain;
+  /* background: url('./img/phone_group.png') no-repeat center center / contain; */
   width: 90%;
   top: -8em;
   left: 1em;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
@@ -74,10 +80,15 @@ p {
   text-align: center;
 }
 
-.btn-container {
-  display: flex;
+.cta-button {
+  display: inline-flex;
+  background-image: linear-gradient(147deg, #33d35e 0%, #2ab6d9 74%);
+  padding: 15px 35px;
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
   justify-content: center;
-  align-items: center;
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px){
