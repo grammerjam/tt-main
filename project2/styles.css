@@ -1,6 +1,85 @@
 /* Extra small devices (portrait phones, less than 576px) */
 /* No media query since this is the default for mobile-first design */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh; 
+  width: 100vw; 
+  overflow: hidden;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 .75rem;
+  background-color: white;
+  position: relative;
+  z-index: 100;
+  border-bottom: 1px solid black;
+}
+
+header {
+  border: 1px solid red;
+  height: 100%;
+}
+
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 35vh;
+  overflow: hidden;
+}
+
+.background-container img {
+  border: 1px solid red;
+  position: absolute;
+  width: 100%;
+}
+
+#navy-path {
+  z-index: 1;
+  background: url('./img/Path_6_navy.png') no-repeat center center / cover;
+  width: 40em;
+  left: -5em;
+  top: -10em;
+}
+
+#green-path {
+  z-index: 2;
+  background: url('./img/Path_6_green.png') no-repeat center center / cover;
+  left: 10em;
+  top: -4em;
+}
+
+
+#phone-group {
+  z-index: 3;
+  background: url('./img/phone_group.png') no-repeat center center / contain;
+  width: 90%;
+  top: -8em;
+  left: 1em;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px){
 
