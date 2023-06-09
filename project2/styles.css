@@ -1,6 +1,12 @@
 /* Extra small devices (portrait phones, less than 576px) */
 /* No media query since this is the default for mobile-first design */
-
+body, html {
+  font-family: 'Cabin', sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: 'Work Sans', sans-serif;
+}
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px){
 
