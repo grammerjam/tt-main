@@ -66,19 +66,36 @@ header {
   left: 1em;
 }
 
-h1 {
+h1, h2, h3, p {
   text-align: center;
 }
 
-p {
-  text-align: center;
-}
 
 .btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.why {
+  background-color: #f4f5ff;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px){
 
