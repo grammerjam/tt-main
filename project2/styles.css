@@ -85,9 +85,9 @@ p {
 
 .why {
   background-color: #f8f8f8;
-  padding: 50px 20px;
+  padding: 3.125rem 1.25rem;
   @media screen and (min-width: 992px) {
-    padding: 50px 80px;
+    padding: 3.125rem 5rem;
   }
 }
 
@@ -113,14 +113,14 @@ p {
 .why-header-subtitle {
   font-family: "Open Sans", sans-serif;
   color: #a0a0a0;
-  font-size: 15px;
+  font-size: 0.938rem;
   @media screen and (min-width: 922px) {
     text-align: left;
   }
 }
 
 .cards-container {
-  margin-top: 55px;
+  margin-top: 3.438rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,7 +150,7 @@ p {
 .why-icon-captions {
   font-family: "Open Sans", sans-serif;
   color: #a0a0a0;
-  font-size: 15px;
+  font-size: 0.938rem;
   @media screen and (min-width: 992px) {
     text-align: left;
   }
