@@ -1,12 +1,21 @@
 /* Extra small devices (portrait phones, less than 576px) */
 /* No media query since this is the default for mobile-first design */
+body,
+html {
+  font-family: "Cabin", sans-serif;
+  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-family: "Work Sans", sans-serif;
+}
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   width: 100vw; 
@@ -17,7 +26,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 .75rem;
+  padding: 0 0.75rem;
   background-color: white;
   position: relative;
   z-index: 100;
@@ -25,10 +34,12 @@ nav {
 }
 
 header {
-  border: 1px solid red;
   height: 100%;
   display: flex;
   flex-direction: column;
+  @media screen and (min-width: 992px) {
+    flex-direction: row-reverse;
+  }
 }
 
 .header-background {
@@ -40,18 +51,22 @@ header {
   width: 100%;
   height: 45vh;
   background-image: 
-    url('/project2/img/Path_6_green.png'), 
-    url('/project2/img/Path_6_navy.png');
+    url('./img/Path_6_green.png'), 
+    url('./img/Path_6_navy.png');
   /* background-position: 
     10em -9em, 
     -10em -13em;  */
   background-position: 16vw -30vh, -26vw -32vh;
   /* background-position: 109px 0px, -63px 30px; */
   background-repeat: no-repeat;
-  background-size: 
-    800px, 
-    800px
+  background-size: 800px, 800px;
+  @media screen and (min-width: 992px) {
+    background-position: 16vw 0vh, -26vw 5vh;
+    background-size: 600px, 600px;
+  }
 }
+
+
 
 #phone-group {
   position: relative;
@@ -64,15 +79,34 @@ header {
 .header-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
+  padding: 3rem 2rem;
+  @media screen and (min-width: 992px) {
+    align-items: start;
+    padding-left: 5rem;
+  }
 }
 
-h1 {
-  text-align: center;
+.header-text h1 {
+  line-height: 1.25em;
+  @media screen and (min-width: 992px) {
+    text-align: left;
+  }
 }
 
+.header-text p {
+  color: #a0a0a0;
+  @media screen and (min-width: 992px) {
+    text-align: left;
+  }
+}
+
+h1,
+h2,
+h3,
 p {
   text-align: center;
+  line-height: 1.5rem;
 }
 
 .cta-button {
@@ -83,29 +117,103 @@ p {
   color: #fff;
   text-decoration: none;
   text-align: center;
-  justify-content: center;
+  margin-top: 1em;
 }
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px){
 
+/* Why section  */
+
+.why {
+  background-color: #f8f8f8;
+  padding: 3rem 2rem;
+  @media screen and (min-width: 992px) {
+    padding: 3rem 5rem;
+  }
+}
+
+.why-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: 992px) {
+    align-items: flex-start;
+    width: 70%;
+  }
+}
+
+.why-header-title {
+  font-weight: 500;
+  font-family: "Open Sans", sans-serif;
+  width: 50%;
+  @media screen and (min-width: 922px) {
+    width: revert;
+  }
+}
+
+.why-header-subtitle {
+  font-family: "Open Sans", sans-serif;
+  color: #a0a0a0;
+  font-size: 0.938rem;
+  @media screen and (min-width: 922px) {
+    text-align: left;
+  }
+}
+
+.cards-container {
+  margin-top: 3.438rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  @media screen and (min-width: 992px) {
+    gap: 1em;
+    flex-wrap: nowrap;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media screen and (min-width: 992px) {
+    align-items: flex-start;
+  }
+}
+
+.icon-titles {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+.why-icon-captions {
+  font-family: "Open Sans", sans-serif;
+  color: #a0a0a0;
+  font-size: 0.938rem;
+  @media screen and (min-width: 992px) {
+    text-align: left;
+  }
+}
+
+/* end of why section  */
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px){
-
+@media (min-width: 768px) {
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px){
-
+@media (min-width: 992px) {
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px){
-
+@media (min-width: 1200px) {
 }
 
 /* XXL devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px){
-
+@media (min-width: 1400px) {
 }
