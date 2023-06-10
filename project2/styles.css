@@ -61,9 +61,16 @@ header {
   background-repeat: no-repeat;
   background-size: 800px, 800px;
   @media screen and (min-width: 992px) {
-    background-size: 700px, 700px;
+    background-size: 700px, 800px;
     background-position: 12vw -12vh, 0vw 0vh;
-  }
+  };
+  @media screen and (min-width: 1200px) {
+    background-size: 700px, 900px;
+  };
+  @media screen and (min-width: 1200px) {
+    background-size: 700px, 1000px;
+    background-position: 12vw -12vh, 0vw -5vh;
+  };
 }
 
 #phone-group {
@@ -136,6 +143,7 @@ p {
   padding: 3rem 2rem;
   @media screen and (min-width: 992px) {
     padding: 3rem 5rem;
+    margin-top: -5em;
   }
 }
 
