@@ -49,7 +49,7 @@ header {
   align-items: center;
   position: relative;
   width: 100%;
-  height: 45vh;
+  /* height: 45vh; not sure if I should have this */
   background-image: 
     url('./img/Path_6_green.png'), 
     url('./img/Path_6_navy.png');
