@@ -245,20 +245,17 @@ p {
   color: #ffffff;
   padding: 2.125rem 3.25rem;
   @media screen and (min-width: 992px) {
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 1rem 2rem;
+    padding: 0.75rem 2rem;
   }
 }
 
-.image-container {
+.footer-first-column-desktop {
   @media screen and (min-width: 995px) {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
 }
 .footer-logo {
@@ -274,7 +271,7 @@ p {
   justify-content: center;
   gap: 1rem;
   font-size: 1.5rem;
-  @media screen and (min-width: 995px) {
+  @media screen and (min-width: 992px) {
     margin: 0;
   }
 }
@@ -287,7 +284,6 @@ p {
   @media screen and (min-width: 992px) {
     flex-direction: row;
     justify-content: space-between;
-    /* gap: 3rem; */
   }
 }
 
@@ -308,8 +304,8 @@ p {
   }
 }
 
-.footer-column-two-desktop,
-.footer-column-one-desktop {
+.footer-second-column-desktop,
+.footer-third-column-desktop {
   display: contents;
   @media screen and (min-width: 992px) {
     display: flex;
@@ -319,7 +315,7 @@ p {
   }
 }
 
-.footer-third-column-desktop {
+.footer-fourth-column-desktop {
   margin-top: 1rem;
   @media screen and (min-width: 992px) {
     margin: 0;
