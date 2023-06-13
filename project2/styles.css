@@ -235,10 +235,126 @@ p {
 
 /* end of latest articles section */
 
+/* Footer section  */
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #2d314d;
+  color: #ffffff;
+  padding: 2.125rem 3.25rem;
+  @media screen and (min-width: 992px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0.75rem 2rem;
+  }
+}
+
+.footer-first-column-desktop {
+  @media screen and (min-width: 992px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+.footer-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.social-icons {
+  color: #ffffff;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  @media screen and (min-width: 992px) {
+    margin: 0;
+  }
+}
+.footer-text-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  @media screen and (min-width: 992px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0;
+  font-family: "Open-sans", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 1rem;
+  list-style: none;
+  @media screen and (min-width: 992px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+.footer-second-column-desktop,
+.footer-third-column-desktop {
+  display: contents;
+  @media screen and (min-width: 992px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+.footer-fourth-column-desktop {
+  margin-top: 1rem;
+  @media screen and (min-width: 992px) {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
+.copyright-text {
+  color: #a0a0a0;
+  font-size: 0.938rem;
+}
+
+.footer-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* end of footer section */
+
 .btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.button {
+  background: linear-gradient(#33d35e, #2ab6d9);
+  border: none;
+  color: #ffffff;
+  padding: 0.625rem 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.25rem 0.125rem;
+  cursor: pointer;
+  border-radius: 1rem;
 }
 
 /* Small devices (landscape phones, 576px and up) */
