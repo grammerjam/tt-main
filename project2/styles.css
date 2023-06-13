@@ -252,7 +252,7 @@ p {
 }
 
 .footer-first-column-desktop {
-  @media screen and (min-width: 995px) {
+  @media screen and (min-width: 992px) {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
