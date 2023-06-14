@@ -16,19 +16,53 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
-    <nav>
-      <p>/// easybank</p>
-      <span class="material-symbols-outlined">menu</span>
+    <div class="overlay"></div>
+    <nav id="navigation">
+      <a href="#" class="logo">easyBank</a>
+      <a aria-label="mobile menu" class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <ul class="menu-left">
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#Blog">Blog</a></li>
+        <li><a href="#Careers">Careers</a></li>
+      </ul>
     </nav>
+
     <header>
+      <nav id="navigation">
+        <a href="#" class="logo">easyBank</a>
+        <a aria-label="mobile menu" class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+        <ul class="menu-left">
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#Blog">Blog</a></li>
+          <li><a href="#Careers">Careers</a></li>
+        </ul>
+      </nav>
+
       <div class="header-background">
-     <img id="phone-group" src="./img/phone_group.png" alt="phone group" />
+        <img id="phone-group" src="./img/phone_group.png" alt="phone group" />
       </div>
       <div class="header-text">
         <h1>Next generation digital banking</h1>
-        <p>Take your financial life online. Your Easybank account will be a one-stop shop for spending, saving, budgeting, investing, and much more.</p>
+        <p>
+          Take your financial life online. Your Easybank account will be a
+          one-stop shop for spending, saving, budgeting, investing, and much
+          more.
+        </p>
         <a href="#" class="cta-button">Request Invite</a>
       </div>
     </header>
@@ -82,5 +116,18 @@
         <p>End Date/Time:</p>
       </div> -->
     </footer>
+    <script>
+      // TOGGLE HAMBURGER & COLLAPSE NAV
+      $(".nav-toggle").on("click", function () {
+        $(this).toggleClass("open");
+        $(".menu-left").toggleClass("collapse");
+        $('.overlay').fadeToggle(); 
+      });
+      // REMOVE X & COLLAPSE NAV ON ON CLICK
+      $(".menu-left a").on("click", function () {
+        $(".nav-toggle").removeClass("open");
+        $(".menu-left").removeClass("collapse");
+      });
+    </script>
   </body>
 </html>

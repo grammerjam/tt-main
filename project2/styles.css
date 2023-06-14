@@ -8,6 +8,7 @@ html {
   font-family: "Montserrat Alternates", sans-serif;
   font-family: "Work Sans", sans-serif;
 }
+
 *,
 *::before,
 *::after {
@@ -18,19 +19,154 @@ body,
 html {
   margin: 0;
   padding: 0;
-  width: 100vw; 
+  width: 100vw;
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+  color: rgba(34, 34, 34, 0.8);
+}
+
+a:hover,
+a:focus {
+  color: black;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency as desired */
+  z-index: 2;
+  display: none; /* Initially hide the overlay */
+}
+
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 0.75rem;
-  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 5rem;
+  background: rgba(255, 255, 255, 0.92);
+  z-index: 3;
+  will-change: transform;
+  transition: background 0.3s, transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+}
+
+nav .logo {
+  float: left;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  font-weight: bold;
+  color: black;
+}
+
+nav .logo:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+      clear: both;
+    }
+}
+
+nav ul li {
+  float: none;
+  margin-left: 0;
+  @media screen and (min-width: 768px) {
+      float: left;
+      margin-left: 1rem;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 0.5em 0;
+  }
+}
+
+nav ul li a {
+  display: block;
+  @media screen and (min-width: 576px) {
+      display: block;
+      padding: 0.425rem 0rem;
+  }
+}
+
+ul.menu-left {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  z-index: 10;
+  @media screen and (min-width: 768px) {
+      display: block !important;
+      float: right;
+      max-height: none;
+  }
+}
+
+ul.menu-left:before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+ul.menu-left.collapse {
+  max-height: 15em !important;
+}
+
+.nav-toggle {
+  display: block;
+  border-radius: 5px;
+  background-color: transparent;
+  float: right;
+  height: 38px;
+  width: 38px;
+  cursor: pointer;
+  padding: 8px 8px;
+  @media screen and (min-width: 768px) {
+      display: none;
+  }
+}
+
+.nav-toggle.open span:first-child {
+  transform: rotate(45deg) translate(4.4px, 4.4px);
+}
+
+.nav-toggle.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.nav-toggle.open span:last-child {
+  transform: rotate(-45deg) translate(4.4px, -4.4px);
+}
+
+.nav-toggle span {
   position: relative;
-  z-index: 100;
-  border-bottom: 1px solid black;
+  display: block;
+  height: 2px;
+  width: 100%;
+  margin-top: 4px;
+  background-color: #000;
+  transition: all 0.25s;
 }
 
 header {
@@ -50,12 +186,12 @@ header {
   position: relative;
   width: 100%;
   /* height: 45vh; not sure if I should have this */
-  background-image: 
-    url('./img/Path_6_green.png'), 
+  background-image:
+    url('./img/Path_6_green.png'),
     url('./img/Path_6_navy.png');
-  background-position: 
-    10em -9em, 
-    -10em -13em; 
+  background-position:
+    10em -9em,
+    -10em -13em;
   /* background-position: 16vw -30vh, -26vw -32vh; */
   /* background-position: 109px 0px, -63px 30px; */
   background-repeat: no-repeat;
@@ -63,14 +199,14 @@ header {
   @media screen and (min-width: 992px) {
     background-size: 700px, 800px;
     background-position: 12vw -12vh, 0vw 0vh;
-  };
+  }
   @media screen and (min-width: 1200px) {
     background-size: 700px, 900px;
-  };
+  }
   @media screen and (min-width: 1200px) {
     background-size: 700px, 1000px;
     background-position: 12vw -12vh, 0vw -5vh;
-  };
+  }
 }
 
 #phone-group {
@@ -79,6 +215,7 @@ header {
   width: 95vw;
   left: -0.25em;
   max-width: 380px;
+
   @media screen and (min-width: 992px) {
     top: 0em;
     max-width: 500px;
@@ -90,8 +227,9 @@ header {
   flex-direction: column;
   align-items: center;
   padding: 3rem 2rem;
+
   @media screen and (min-width: 992px) {
-    align-items: flex-start; 
+    align-items: flex-start;
     align-content: center;
     justify-content: flex-start;
     padding-left: 5rem;
@@ -101,6 +239,7 @@ header {
 
 .header-text h1 {
   line-height: 1.25em;
+
   @media screen and (min-width: 992px) {
     text-align: left;
   }
@@ -108,6 +247,7 @@ header {
 
 .header-text p {
   color: #a0a0a0;
+
   @media screen and (min-width: 992px) {
     text-align: left;
   }
@@ -130,9 +270,10 @@ p {
   text-decoration: none;
   text-align: center;
   margin-top: 1em;
+
   @media screen and (min-width: 992px) {
-    display: block;  
-    text-align: left;  
+    display: block;
+    text-align: left;
   }
 }
 
@@ -141,6 +282,7 @@ p {
 .why {
   background-color: #f8f8f8;
   padding: 3rem 2rem;
+
   @media screen and (min-width: 992px) {
     padding: 3rem 5rem;
     margin-top: -5em;
@@ -151,6 +293,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   @media screen and (min-width: 992px) {
     align-items: flex-start;
     width: 70%;
@@ -161,6 +304,7 @@ p {
   font-weight: 500;
   font-family: "Open Sans", sans-serif;
   width: 50%;
+
   @media screen and (min-width: 922px) {
     width: revert;
   }
@@ -170,6 +314,7 @@ p {
   font-family: "Open Sans", sans-serif;
   color: #a0a0a0;
   font-size: 0.938rem;
+
   @media screen and (min-width: 922px) {
     text-align: left;
   }
@@ -182,6 +327,7 @@ p {
   align-items: center;
   flex-wrap: wrap;
   gap: 2em;
+
   @media screen and (min-width: 992px) {
     gap: 1em;
     flex-wrap: nowrap;
@@ -193,6 +339,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   @media screen and (min-width: 992px) {
     align-items: flex-start;
   }
@@ -207,6 +354,7 @@ p {
   font-family: "Open Sans", sans-serif;
   color: #a0a0a0;
   font-size: 0.938rem;
+
   @media screen and (min-width: 992px) {
     text-align: left;
   }
@@ -216,21 +364,16 @@ p {
 
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-}
+@media (min-width: 576px) {}
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
+@media (min-width: 992px) {}
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) {}
 
 /* XXL devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-}
+@media (min-width: 1400px) {}
