@@ -1,77 +1,19 @@
-/* Extra small devices (portrait phones, less than 576px) */
-/* No media query since this is the default for mobile-first design */
+/* Globals */
 body,
 html {
-  font-family: "Cabin", sans-serif;
-  font-family: "Lato", sans-serif;
-  font-family: "Montserrat", sans-serif;
   font-family: "Montserrat Alternates", sans-serif;
   font-family: "Work Sans", sans-serif;
-}
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body,
-html {
   margin: 0;
   padding: 0;
   width: 100vw;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 0.75rem;
-  background-color: white;
-  position: relative;
-  z-index: 100;
-  border-bottom: 1px solid black;
-}
-
-header {
-  border: 1px solid red;
-  height: 100%;
-}
-
-.background-container {
-  position: relative;
-  width: 100%;
-  height: 35vh;
-  overflow: hidden;
-}
-
-.background-container img {
-  border: 1px solid red;
-  position: absolute;
-  width: 100%;
-}
-
-#navy-path {
-  z-index: 1;
-  background: url("./img/Path_6_navy.png") no-repeat center center / cover;
-  width: 40em;
-  left: -5em;
-  top: -10em;
-}
-
-#green-path {
-  z-index: 2;
-  background: url("./img/Path_6_green.png") no-repeat center center / cover;
-  left: 10em;
-  top: -4em;
-}
-
-#phone-group {
-  z-index: 3;
-  background: url("./img/phone_group.png") no-repeat center center / contain;
-  width: 90%;
-  top: -8em;
-  left: 1em;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 h1,
@@ -79,15 +21,272 @@ h2,
 h3,
 p {
   text-align: center;
+  line-height: 1.5rem;
 }
 
-/* Why section  */
 
+a {
+  text-decoration: none;
+  color: rgba(34, 34, 34, 0.8);
+}
+
+a:hover,
+a:focus {
+  color: black;
+}
+
+/* Start Navbar Section */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+  z-index: 2;
+  position: relative;
+  background-color: white;
+}
+
+.logo {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  transition: max-height 0.2s ease-in-out;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+}
+
+.cta-button-small {
+  padding: 10px 20px;
+  background: linear-gradient(147deg, #33d35e 0%, #2ab6d9 74%);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  margin-left: 2em;
+  font-family: "Work Sans", sans-serif;
+}
+
+ /* Burger Menu */
+.burger {
+  display: none;
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+}
+
+.burger div {
+  width: 25px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.burger div:nth-child(1) {
+  top: 8px;
+}
+
+.burger div:nth-child(2) {
+  top: 18px;
+}
+
+.burger div:nth-child(3) {
+  top: 28px;
+}
+
+/* Cross */
+.toggle div:nth-child(1) {
+  transform: rotate(-45deg) translate(-7px, 7px);
+}
+
+.toggle div:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle div:nth-child(3) {
+  transform: rotate(45deg) translate(-7px, -7px);
+}
+
+/* Mobile styling for Navbar */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 1rem 2rem;
+  }
+
+  .nav-links {
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 48px;
+    right: 0px;
+    background-color: white;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .nav-links li {
+    margin: .75em 0;
+  }
+
+  .nav-links.open {
+    max-height: 100vh;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .cta-button-small {
+    display: none;
+  }
+}
+/* End Navbar section */
+
+/* Start Header section */
+header {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media screen and (min-width: 992px) {
+    flex-direction: row-reverse;
+  }
+}
+
+.header-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  /* height: 45vh; not sure if I should have this */
+  background-image:
+    url('./img/Path_6_green.png'),
+    url('./img/Path_6_navy.png');
+  background-position:
+    10em -9em,
+    -10em -13em;
+  background-repeat: no-repeat;
+  background-size: 800px, 800px;
+  height: 40vh;
+  @media screen and (min-width: 992px) {
+    background-size: 700px, 800px;
+    background-position: 12vw -12vh, 0vw 0vh;
+    height: 70vh;
+  }
+  @media screen and (min-width: 1200px) {
+    background-size: 700px, 900px;
+  }
+  @media screen and (min-width: 1400px) {
+    background-size: 700px, 1000px;
+    background-position: 12vw -12vh, 0vw -5vh;
+  }
+}
+
+#phone-group {
+  position: relative;
+  top: -4em;
+  width: 95vw;
+  left: -0.25em;
+  max-width: 380px;
+  @media screen and (min-width: 992px) {
+    top: 0em;
+    max-width: 500px;
+  }
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+
+  @media screen and (min-width: 992px) {
+    align-items: flex-start;
+    align-content: center;
+    justify-content: flex-start;
+    padding-left: 5rem;
+    width: 75%;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 1rem 2rem;
+  }
+}
+
+.header-text h1 {
+  line-height: 1.25em;
+
+  @media screen and (min-width: 992px) {
+    text-align: left;
+  }
+}
+
+.header-text p {
+  color: #a0a0a0;
+
+  @media screen and (min-width: 992px) {
+    text-align: left;
+  }
+}
+
+.cta-button {
+  display: inline-flex;
+  background-image: linear-gradient(147deg, #33d35e 0%, #2ab6d9 74%);
+  padding: 15px 35px;
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 1em;
+
+  @media screen and (min-width: 992px) {
+    display: block;
+    text-align: left;
+  }
+}
+/* End Header section */
+
+/* Start Why section  */
 .why {
   background-color: #f8f8f8;
-  padding: 3.125rem 1.25rem;
+  padding: 3rem 2rem;
+
   @media screen and (min-width: 992px) {
-    padding: 3.125rem 5rem;
+    padding: 3rem 5rem;
+    margin-top: -5em;
   }
 }
 
@@ -95,6 +294,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   @media screen and (min-width: 992px) {
     align-items: flex-start;
     width: 70%;
@@ -105,6 +305,7 @@ p {
   font-weight: 500;
   font-family: "Open Sans", sans-serif;
   width: 50%;
+
   @media screen and (min-width: 922px) {
     width: revert;
   }
@@ -114,6 +315,7 @@ p {
   font-family: "Open Sans", sans-serif;
   color: #a0a0a0;
   font-size: 0.938rem;
+
   @media screen and (min-width: 922px) {
     text-align: left;
   }
@@ -126,6 +328,7 @@ p {
   align-items: center;
   flex-wrap: wrap;
   gap: 2em;
+
   @media screen and (min-width: 992px) {
     gap: 1em;
     flex-wrap: nowrap;
@@ -137,6 +340,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   @media screen and (min-width: 992px) {
     align-items: flex-start;
   }
@@ -151,15 +355,15 @@ p {
   font-family: "Open Sans", sans-serif;
   color: #a0a0a0;
   font-size: 0.938rem;
+
   @media screen and (min-width: 992px) {
     text-align: left;
   }
 }
 
-/* end of why section  */
+/* End Why section  */
 
-/* Latest Articles section */
-
+/* Start Latest Articles section */
 .latest-articles {
   padding: 3.125rem 1.25rem;
   @media screen and (min-width: 992px) {
@@ -232,11 +436,9 @@ p {
   font-size: 0.938rem;
   text-align: left;
 }
+/* End Latest Articles section */
 
-/* end of latest articles section */
-
-/* Footer section  */
-
+/* Start Footer section  */
 .footer {
   left: 0;
   bottom: 0;
@@ -292,7 +494,7 @@ p {
   flex-direction: column;
   gap: 1rem;
   padding: 0;
-  font-family: "Open-sans", sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 400;
   color: #ffffff;
   font-size: 1rem;
@@ -335,44 +537,4 @@ p {
   justify-content: center;
   align-items: center;
 }
-
-/* end of footer section */
-
-.btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.button {
-  background: linear-gradient(#33d35e, #2ab6d9);
-  border: none;
-  color: #ffffff;
-  padding: 0.625rem 1.25rem;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 0.25rem 0.125rem;
-  cursor: pointer;
-  border-radius: 1rem;
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
-
-/* XXL devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-}
+/* End Footer section */

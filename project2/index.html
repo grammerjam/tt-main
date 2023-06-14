@@ -16,30 +16,42 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- icon import -->
-    <script
-      src="https://kit.fontawesome.com/ae0c8115f3.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/ae0c8115f3.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <nav>
-      <p>/// easybank</p>
-      <span class="material-symbols-outlined">menu</span>
-    </nav>
-    <header>
-      <div class="background-container">
-        <img id="phone-group" src="./img/phone_group.png" alt="phone group" />
-        <img id="green-path" src="./img/Path_6_green.png" alt="green path" />
-        <img id="navy-path" src="./img/Path_6_navy.png" alt="navy path" />
+      <div class="logo"><img src="./img/logo.svg" alt="logo" class="footer-logo" /></div>
+      <div class="menu-container">
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
       </div>
-      <h1>Next generation digital banking</h1>
-      <p>
-        Take your financial life online. Your Easybank account will be a
-        one-stop shop for spending, saving, budgeting, investing, and much more.
-      </p>
-      <div class="btn-container">
-        <button>Request Invite</button>
+      <button class="cta-button-small">Request Invite</button>
+      <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+    <div class="overlay"></div>
+    <header>
+      <div class="header-background">
+        <img id="phone-group" src="./img/phone_group.png" alt="phone group" />
+      </div>
+      <div class="header-text">
+        <h1>Next generation digital banking</h1>
+        <p>
+          Take your financial life online. Your Easybank account will be a
+          one-stop shop for spending, saving, budgeting, investing, and much
+          more.
+        </p>
+        <a href="#" class="cta-button">Request Invite</a>
       </div>
     </header>
     <section class="why">
@@ -188,10 +200,23 @@
       </div>
       <div class="footer-fourth-column-desktop">
         <div class="footer-btn-container">
-          <button class="button">Request Invite</button>
+          <button class="cta-button-small">Request Invite</button>
         </div>
         <p class="copyright-text">&copy;Easybank. All Rights Reserved</p>
       </div>
     </footer>
+    <div class="timestamp">
+      <p>Start Date/Time: 6/7/2023 3:30 PM EST</p>
+      <p>End Date/Time: 6/14/2023 12:37 AM EST</p>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $(".burger").click(function () {
+          $(".nav-links").toggleClass("open");
+          $(this).toggleClass("toggle");
+          $(".overlay").fadeToggle();
+        });
+      });
+    </script>
   </body>
 </html>
