@@ -19,40 +19,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
-    <div class="overlay"></div>
-    <nav id="navigation">
-      <a href="#" class="logo">easyBank</a>
-      <a aria-label="mobile menu" class="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-      <ul class="menu-left">
-        <li><a href="#Home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#Blog">Blog</a></li>
-        <li><a href="#Careers">Careers</a></li>
-      </ul>
-    </nav>
-
-    <header>
-      <nav id="navigation">
-        <a href="#" class="logo">easyBank</a>
-        <a aria-label="mobile menu" class="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </a>
-        <ul class="menu-left">
-          <li><a href="#Home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#Blog">Blog</a></li>
-          <li><a href="#Careers">Careers</a></li>
+    <nav>
+      <div class="logo">easyBank</div>
+      <div class="menu-container">
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
         </ul>
-      </nav>
-
+        <button class="cta-button-nav">Request Invite</button>
+      </div>
+      <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+    <div class="overlay"></div>
+    <header>
       <div class="header-background">
         <img id="phone-group" src="./img/phone_group.png" alt="phone group" />
       </div>
@@ -117,16 +103,12 @@
       </div> -->
     </footer>
     <script>
-      // TOGGLE HAMBURGER & COLLAPSE NAV
-      $(".nav-toggle").on("click", function () {
-        $(this).toggleClass("open");
-        $(".menu-left").toggleClass("collapse");
-        $('.overlay').fadeToggle(); 
-      });
-      // REMOVE X & COLLAPSE NAV ON ON CLICK
-      $(".menu-left a").on("click", function () {
-        $(".nav-toggle").removeClass("open");
-        $(".menu-left").removeClass("collapse");
+      $(document).ready(function () {
+        $(".burger").click(function () {
+          $(".nav-links").toggleClass("open");
+          $(this).toggleClass("toggle");
+          $(".overlay").fadeToggle();
+        });
       });
     </script>
   </body>
