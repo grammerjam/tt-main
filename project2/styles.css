@@ -1,5 +1,4 @@
-/* Extra small devices (portrait phones, less than 576px) */
-/* No media query since this is the default for mobile-first design */
+/* Globals */
 body,
 html {
   font-family: "Montserrat Alternates", sans-serif;
@@ -17,6 +16,15 @@ html {
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+
 a {
   text-decoration: none;
   color: rgba(34, 34, 34, 0.8);
@@ -27,6 +35,7 @@ a:focus {
   color: black;
 }
 
+/* Start Navbar Section */
 .overlay {
   position: fixed;
   top: 0;
@@ -86,6 +95,7 @@ nav {
   font-family: "Work Sans", sans-serif;
 }
 
+ /* Burger Menu */
 .burger {
   display: none;
   cursor: pointer;
@@ -114,6 +124,20 @@ nav {
   top: 28px;
 }
 
+/* Cross */
+.toggle div:nth-child(1) {
+  transform: rotate(-45deg) translate(-7px, 7px);
+}
+
+.toggle div:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle div:nth-child(3) {
+  transform: rotate(45deg) translate(-7px, -7px);
+}
+
+/* Mobile styling for Navbar */
 @media screen and (max-width: 768px) {
   nav {
     padding: 1rem 2rem;
@@ -148,21 +172,9 @@ nav {
     display: none;
   }
 }
+/* End Navbar section */
 
-/* Cross */
-.toggle div:nth-child(1) {
-  transform: rotate(-45deg) translate(-7px, 7px);
-}
-
-.toggle div:nth-child(2) {
-  opacity: 0;
-}
-
-.toggle div:nth-child(3) {
-  transform: rotate(45deg) translate(-7px, -7px);
-}
-
-
+/* Start Header section */
 header {
   height: 100%;
   display: flex;
@@ -187,22 +199,17 @@ header {
   background-position:
     10em -9em,
     -10em -13em;
-  /* background-position: 16vw -30vh, -26vw -32vh; */
-  /* background-position: 109px 0px, -63px 30px; */
   background-repeat: no-repeat;
   background-size: 800px, 800px;
   height: 40vh;
-
   @media screen and (min-width: 992px) {
     background-size: 700px, 800px;
     background-position: 12vw -12vh, 0vw 0vh;
     height: 70vh;
   }
-
   @media screen and (min-width: 1200px) {
     background-size: 700px, 900px;
   }
-
   @media screen and (min-width: 1400px) {
     background-size: 700px, 1000px;
     background-position: 12vw -12vh, 0vw -5vh;
@@ -215,7 +222,6 @@ header {
   width: 95vw;
   left: -0.25em;
   max-width: 380px;
-
   @media screen and (min-width: 992px) {
     top: 0em;
     max-width: 500px;
@@ -256,14 +262,6 @@ header {
   }
 }
 
-h1,
-h2,
-h3,
-p {
-  text-align: center;
-  line-height: 1.5rem;
-}
-
 .cta-button {
   display: inline-flex;
   background-image: linear-gradient(147deg, #33d35e 0%, #2ab6d9 74%);
@@ -279,9 +277,9 @@ p {
     text-align: left;
   }
 }
+/* End Header section */
 
-/* Why section  */
-
+/* Start Why section  */
 .why {
   background-color: #f8f8f8;
   padding: 3rem 2rem;
@@ -363,10 +361,9 @@ p {
   }
 }
 
-/* end of why section  */
+/* End Why section  */
 
-/* Latest Articles section */
-
+/* Start Latest Articles section */
 .latest-articles {
   padding: 3.125rem 1.25rem;
   @media screen and (min-width: 992px) {
@@ -439,11 +436,9 @@ p {
   font-size: 0.938rem;
   text-align: left;
 }
+/* End Latest Articles section */
 
-/* end of latest articles section */
-
-/* Footer section  */
-
+/* Start Footer section  */
 .footer {
   left: 0;
   bottom: 0;
@@ -542,11 +537,4 @@ p {
   justify-content: center;
   align-items: center;
 }
-
-/* end of footer section */
-
-.btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* End Footer section */
