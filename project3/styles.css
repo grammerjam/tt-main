@@ -32,3 +32,13 @@ a:hover,
 a:focus {
   color: black;
 }
+
+body {
+  background: #ffffff;
+  background-repeat: no-repeat;
+  background-image: url("./images/bg-main-desktop.png");
+  background-size: 100% 17em;
+  @media screen and (min-width: 992px) {
+    background-size: auto;
+  }
+}
