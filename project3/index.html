@@ -26,10 +26,31 @@
     <style></style>
   </head>
   <body>
-    <div class="page-layout">
-      <section class="card"></section>
-      <section class="form">
-        <form action="submit" class="form-container">
+    <nav>
+      <div class="logo">
+        <img src="./images/blue-steel-logo-no-background.png" alt="logo" />
+      </div>
+    </nav>
+    <section class="main">
+      <section class="card-container">
+        <div class="front-card-container">
+          <div class="top-row">
+            <img src="./images/card-logo.svg" alt="credit card background" />
+          </div>
+          <div class="middle-row">
+            <p id="card-number">0000 0000 0000 0000</p>
+          </div>
+          <div class="last-row">
+            <p id="full-name">Jane Appleseed</p>
+            <p id="date">00/00</p>
+          </div>
+        </div>
+        <div class="back-card-container">
+          <p>000</p>
+        </div>
+      </section>
+      <section class="form-container">
+        <form action="submit">
           <label for="cardholder-name">CARDHOLDER NAME</label><br />
           <input
             type="text"
@@ -80,6 +101,10 @@
           <button type="submit" value="Confirm" class="btn">Confirm</button>
         </form>
       </section>
-    </div>
+    </section>
+    <footer>
+      <p>Start Date/Time: 6/19/2023 10:18 PM EST</p>
+      <p>End Date/Time:</p>
+    </footer>
   </body>
 </html>
