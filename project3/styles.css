@@ -43,7 +43,7 @@ body {
   }
 }
 
-.card-container {
+.front-card-container {
   z-index: 2;
   width: 20em;
   height: 11em;
@@ -62,14 +62,14 @@ body {
   }
 }
 
-.card-container p {
+.front-card-container p {
   color: #fff;
   line-height: .5rem;
 }
 
-.card-container .top-row,
-.card-container .middle-row,
-.card-container .last-row {
+.front-card-container .top-row,
+.front-card-container .middle-row,
+.front-card-container .last-row {
   display: flex;
   flex-direction: row;
   align-items: center;
