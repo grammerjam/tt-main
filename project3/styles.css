@@ -34,6 +34,9 @@ a:focus {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background: #ffffff;
   background-repeat: no-repeat;
   background-image: url("./images/bg-main-desktop.png");
@@ -60,6 +63,10 @@ nav {
 
 .logo img {
   width: 60%;
+}
+
+.main {
+  flex: 1 0 auto;
 }
 
 .card-container {
@@ -147,6 +154,18 @@ nav {
   color: #fff;
   top: 4.7em;
   left: 15em;
+}
+
+footer {
+  padding: 1em;
+  margin-top: auto;
+  border-top: 1px solid #d9d9d9;
+}
+
+footer p {
+  font-size: .7rem;
+  line-height: 1;
+  letter-spacing: .2em;
 }
 
 
