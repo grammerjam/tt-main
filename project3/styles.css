@@ -43,6 +43,25 @@ body {
   }
 }
 
+nav {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.logo img {
+  width: 60%;
+}
+
 .card-container {
   z-index: 3;
   display: flex;
