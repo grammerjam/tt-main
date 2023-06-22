@@ -8,7 +8,7 @@
   --white: #ffffff;
   --light-grayish-violet: #dedddf;
   --dark-grayish-violet: #8e8593;
-  --vert-dark-violet: #21092f;
+  --very-dark-violet: #21092f;
   --black: #222222;
 }
 
@@ -71,8 +71,8 @@ body {
 .form-container {
   /* display: flex; */
   /* flex-direction: column; */
-  /* width: 30%;
-  position: inherit;  */
+  width: 50%;
+  /* position: inherit;  */
   /* grid-column: 3 / span 2;
   grid-row: third-line / 4; */
 }
@@ -81,6 +81,7 @@ body {
   /* display: flex; */
   /* flex-direction: column; */
   font-size: 1.125rem;
+  width: 50%;
   /* width: 600px; */
 }
 
@@ -95,6 +96,7 @@ body {
 .btn {
   width: 100%;
   color: var(--white);
-  background-color: var(--vert-dark-violet);
-  border-radius: 15px;
+  background-color: var(--very-dark-violet);
+  border-radius: 10px;
+  padding: 0.75em 2em;
 }
