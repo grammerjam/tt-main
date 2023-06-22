@@ -1,4 +1,17 @@
 /* Globals */
+:root {
+  --linear-gradient: linearGradient(
+    #6448fe,
+    #600594
+  ); /* (active input border) */
+  --red: #ff5252; /*(input errors)*/
+  --white: #ffffff;
+  --light-grayish-violet: #dedddf;
+  --dark-grayish-violet: #8e8593;
+  --vert-dark-violet: #21092f;
+  --black: #222222;
+}
+
 body,
 html {
   font-family: "Space Grotesk", sans-serif;
@@ -25,23 +38,23 @@ p {
 
 a {
   text-decoration: none;
-  color: rgba(34, 34, 34, 0.8);
+  color: var(--black);
 }
 
 a:hover,
 a:focus {
-  color: black;
+  color: var(--black);
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: #ffffff;
+  background: var(--white);
   background-repeat: no-repeat;
   background-image: url("./images/bg-main-desktop.png");
   background-size: 100% 17em;
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1440px) {
     background-size: auto;
   }
 }
@@ -63,17 +76,32 @@ nav {
 
 .logo img {
   width: 60%;
+  @media screen and (min-width: 1440px) {
+    width: 15%;
+  }
 }
 
 .main {
   flex: 1 0 auto;
 }
 
+.page-layout {
+  display: flex;
+  flex-direction: row;
+  height: 600px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
 .card-container {
   z-index: 3;
   display: flex;
   flex-direction: column-reverse;
-  position: absolute;
+  position: relative;
   width: 100%;
   padding: 1em 1em 0 1em;
 }
@@ -93,7 +121,7 @@ nav {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 18px 50px -10px;
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1440px) {
     flex-direction: row;
     justify-content: space-around;
   }
@@ -156,10 +184,41 @@ nav {
   left: 15em;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  /* font-size: 1.125rem; */
+  width: 100%;
+}
+
+form {
+  display: flex; 
+  flex-direction: column;
+  /* 
+  position: inherit;  
+  grid-column: 3 / span 2;
+  grid-row: third-line / 4;  */
+  background-color: #fff;
+  border: 3px solid red;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.btn {
+  width: 100%;
+  color: var(--white);
+  background-color: var(--vert-dark-violet);
+  border-radius: 15px;
+}
+
 footer {
   padding: 1em;
   margin-top: auto;
   border-top: 1px solid #d9d9d9;
+  background-color: #fff;
 }
 
 footer p {
@@ -167,5 +226,4 @@ footer p {
   line-height: 1;
   letter-spacing: .2em;
 }
-
 
