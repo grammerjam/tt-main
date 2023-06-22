@@ -1,8 +1,12 @@
 # tt-main
+
 Team BLUE STEEL - Main Repo
-________________________________
+
+---
 
 2nd Project
+
+DEPLOYED SITE: https://easybank-team-blue-steel.netlify.app/
 
 Under tt-main/ create a new folder called project2 and start your project there: one index.html file and styles.css file only.
 
