@@ -35,6 +35,7 @@
             type="text"
             id="cardholder-name"
             name="cname"
+            class="input-boxes"
             placeholder="e.g. Jane Appleseed"
           /><br />
 
@@ -43,14 +44,22 @@
             type="text"
             id="card-number"
             name="cnumber"
+            class="input-boxes"
             placeholder="0000 0000 0000 0000"
           />
 
           <div>
             <label>EXP. DATE (MM/YYY)</label>
             <div class="row">
-              <input type="text" id="expiry" name="expiry" placeholder="MM" />
-              <input type="text" id="expyear" name="expyear" placeholder="YY" />
+              <div class="col-50 date">
+                <input type="text" id="expiry" name="expiry" placeholder="MM" />
+                <input
+                  type="text"
+                  id="expyear"
+                  name="expyear"
+                  placeholder="YY"
+                />
+              </div>
             </div>
           </div>
           <label for="cvc">CVC</label>

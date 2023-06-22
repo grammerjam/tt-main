@@ -90,7 +90,17 @@ body {
 }
 
 .col-50 {
-  flex: 50%;
+  /* flex: 50%; */
+}
+
+input[type="text"] {
+  padding: 12px;
+  border: 1px solid var(--black);
+  border-radius: 3px;
+}
+
+.input-boxes {
+  width: 100%;
 }
 
 .btn {
