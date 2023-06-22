@@ -48,22 +48,35 @@
             placeholder="0000 0000 0000 0000"
           />
 
-          <div>
-            <label>EXP. DATE (MM/YYY)</label>
-            <div class="row">
-              <div class="col-50 date">
-                <input type="text" id="expiry" name="expiry" placeholder="MM" />
+          <div class="card-details-container">
+            <!-- <div class=""> -->
+            <div class="expiration-date-container">
+              <label class="expiration-date-container__label"
+                >EXP. DATE (MM/YYY)</label
+              >
+              <div class="expiration-date-container__boxes">
+                <input
+                  type="text"
+                  id="expiry"
+                  name="expiry"
+                  placeholder="MM"
+                  class="expiry-input"
+                />
                 <input
                   type="text"
                   id="expyear"
                   name="expyear"
                   placeholder="YY"
+                  class="expiry-input"
                 />
               </div>
             </div>
+            <div>
+              <label for="cvc">CVC</label>
+              <input type="text" id="cvc" name="cvc" placeholder="e.g 123" />
+            </div>
+            <!-- </div> -->
           </div>
-          <label for="cvc">CVC</label>
-          <input type="text" id="cvc" name="cvc" placeholder="e.g 123" />
           <button type="submit" value="Confirm" class="btn">Confirm</button>
         </form>
       </section>

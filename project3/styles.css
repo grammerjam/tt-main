@@ -58,8 +58,12 @@ body {
 
 .page-layout {
   display: flex;
-  flex-direction: row;
-  height: 600px;
+  flex-direction: column;
+  height: 700px;
+  justify-content: space-between;
+  @media screen and (min-width: 992px) {
+    height: 600px;
+  }
 }
 
 .card {
@@ -68,29 +72,43 @@ body {
   width: 50%;
 }
 
-.form-container {
-  /* display: flex; */
-  /* flex-direction: column; */
-  width: 50%;
-  /* position: inherit;  */
-  /* grid-column: 3 / span 2;
-  grid-row: third-line / 4; */
-}
-
 .form {
-  /* display: flex; */
-  /* flex-direction: column; */
-  font-size: 1.125rem;
+  display: flex;
+  justify-content: center;
   width: 50%;
-  /* width: 600px; */
+  font-size: 1.125rem;
+  width: 600px;
+  @media screen and (min-width: 992px) {
+    width: 50%;
+  }
 }
 
-.row {
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.card-details-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.expiration-date-container {
+  display: flex;
+  flex-direction: column;
+}
+.expiration-date-container__label {
+  white-space: nowrap;
+}
+
+.expiration-date-container__boxes {
   display: flex;
 }
 
-.col-50 {
-  /* flex: 50%; */
+.expiry-input {
+  width: 50%;
 }
 
 input[type="text"] {
