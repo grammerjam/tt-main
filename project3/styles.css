@@ -57,7 +57,7 @@ body {
   background-image: url("./images/bg-main-desktop.png");
   background-size: 100% 17em;
   @media screen and (min-width: 1440px) {
-    background-size: auto;
+    background-size: contain;
   }
 }
 
@@ -99,22 +99,6 @@ nav {
     overflow: auto;
   }
 }
-
-/* .page-layout {
-  display: flex;
-  flex-direction: column;
-  height: 700px;
-  justify-content: space-between;
-  @media screen and (min-width: 992px) {
-    height: 600px;
-  }
-} */
-
-/* .card {
-  display: flex;
-  flex-direction: column;
-  width: 50%; */
-/* } */
 
 .card-container {
   z-index: 3;
@@ -213,13 +197,10 @@ nav {
 
 form {
   font-size: 12px;
-  /* display: flex;
-  justify-content: center;
-  width: 50%;
-  width: 600px;
   @media screen and (min-width: 992px) {
     width: 50%;
-  } */
+    margin: auto;
+  }
 }
 
 .form-container {
