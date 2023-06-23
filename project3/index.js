@@ -96,7 +96,6 @@ const validateInputs = () => {
   }
 
   if (!hasErrors) {
-    debugger;
     form.style.display = "none";
     const successMessage = document.querySelector(".thank-you-message");
     successMessage.style.display = "block";
