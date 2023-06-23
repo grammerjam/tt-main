@@ -56,6 +56,7 @@
             type="text"
             id="cardholder-name"
             name="cname"
+            class="input-boxes"
             placeholder="e.g. Jane Appleseed"
           /><br />
 
@@ -64,18 +65,43 @@
             type="text"
             id="card-number"
             name="cnumber"
-            placeholder="0000 0000 0000 0000"
+            class="input-boxes"
+            placeholder="e.g. 1234 5678 9123 0000"
           />
 
-          <div>
-            <label>EXP. DATE (MM/YYY)</label>
-            <div class="row">
-              <input type="text" id="expiry" name="expiry" placeholder="MM" />
-              <input type="text" id="expyear" name="expyear" placeholder="YY" />
+          <div class="card-details-container">
+            <div class="expiration-date-container">
+              <label class="expiration-date-container__label"
+                >EXP. DATE (MM/YY)</label
+              >
+              <div class="expiration-date-container__boxes">
+                <input
+                  type="text"
+                  id="expiry"
+                  name="expiry"
+                  placeholder="MM"
+                  class="expiry-input"
+                />
+                <input
+                  type="text"
+                  id="expyear"
+                  name="expyear"
+                  placeholder="YY"
+                  class="expiry-input"
+                />
+              </div>
+            </div>
+            <div class="cvc-container">
+              <label for="cvc" class="cvc-container__label">CVC</label>
+              <input
+                type="text"
+                id="cvc"
+                name="cvc"
+                placeholder="e.g. 123"
+                class="cvc-input"
+              />
             </div>
           </div>
-          <label for="cvc">CVC</label>
-          <input type="text" id="cvc" name="cvc" placeholder="e.g 123" />
           <button type="submit" value="Confirm" class="btn">Confirm</button>
         </form>
       </section>
