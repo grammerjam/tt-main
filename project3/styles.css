@@ -200,6 +200,7 @@ nav {
 }
 
 form {
+  display: block;
   font-size: 12px;
   @media screen and (min-width: 1440px) {
     width: 50%;
@@ -374,7 +375,7 @@ label {
 }
 
 .thank-you-message {
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 50%;
   margin: auto;

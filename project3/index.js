@@ -37,7 +37,7 @@ const validateInputs = () => {
 
   if (cardholderNameValue === "") {
     setError(cardholderNameInput, "Can't be blank");
-  } else if (cardholderNameValue.length !== 2) {
+  } else if (cardholderNameValue.length <= 2) {
     setError(cardholderNameInput, "Must be at least 2 letters");
   } else {
     setSuccess(cardholderNameInput);
@@ -52,7 +52,7 @@ const validateInputs = () => {
   }
 
   if (cvcValue === "") {
-    setError(cvcInput, "CVC is required");
+    setError(cvcInput, "Can't be blank");
   } else if (cvcValue.length !== 3) {
     setError(cvcInput, "Must be 3 numbers");
   } else if (/\D/.test(cvcValue)) {
@@ -79,5 +79,15 @@ const validateInputs = () => {
     setError(expyearInput, "Must be 2 numbers");
   } else {
     setSuccess(expyearInput);
+  }
+
+  // success message rendering
+  const errorElements = document.querySelectorAll(".error");
+  if (errorElements.length === 0) {
+    // All fields are valid, hide the form and display success message
+    form.style.display = "none";
+    const successMessage = document.querySelector(".thank-you-message");
+    // successMessage.innerText = "We've added your card details.";
+    successMessage.style.display = "block";
   }
 };
