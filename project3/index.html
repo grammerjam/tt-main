@@ -21,9 +21,12 @@
       rel="stylesheet"
     />
 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script defer src="./index.js"></script>
+
     <title>Project 3 - Team Blue Steel</title>
 
-    <style></style>
+    <script src="script.js"></script>
   </head>
   <body>
     <nav>
@@ -38,7 +41,7 @@
             <img src="./images/card-logo.svg" alt="credit card background" />
           </div>
           <div class="middle-row">
-            <p id="card-number">0000 0000 0000 0000</p>
+            <p id="display-card-number">0000 0000 0000 0000</p>
           </div>
           <div class="last-row">
             <p id="full-name">Jane Appleseed</p>
@@ -46,37 +49,43 @@
           </div>
         </div>
         <div class="back-card-container">
-          <p>000</p>
+          <p id="display-cvc">000</p>
         </div>
       </section>
       <section class="form-container">
-        <form action="submit">
-          <label for="cardholder-name">CARDHOLDER NAME</label><br />
-          <input
-            type="text"
-            id="cardholder-name"
-            name="cname"
-            class="input-boxes"
-            placeholder="e.g. Jane Appleseed"
-            required
-          /><br />
-
-          <label for="card-number">CARD NUMBER</label><br />
-          <input
-            type="text"
-            id="card-number"
-            name="cnumber"
-            class="input-boxes"
-            placeholder="e.g. 1234 5678 9123 0000"
-            required
-            inputmode="numeric"
-            pattern="[0-9\s]{13,19}"
-            autocomplete="cc-number"
-            maxlength="19"
-          />
-
+        <form action="#" novalidate id="form">
+          <div class="inputControl">
+            <label for="cardholderName">CARDHOLDER NAME</label>
+            <br />
+            <input
+              type="text"
+              id="cardholderName"
+              name="cname"
+              class="input-boxes"
+              placeholder="e.g. Jane Appleseed"
+              required
+            /><br />
+            <div class="error"></div>
+          </div>
+          <div class="inputControl">
+            <label for="cardNumber">CARD NUMBER</label>
+            <br />
+            <input
+              type="text"
+              id="cardNumber"
+              name="cnumber"
+              class="input-boxes"
+              placeholder="e.g. 1234 5678 9123 0000"
+              required
+              inputmode="numeric"
+              pattern="[0-9\s]{13,19}"
+              autocomplete="cc-number"
+              maxlength="19"
+            />
+            <div class="error"></div>
+          </div>
           <div class="card-details-container">
-            <div class="expiration-date-container">
+            <div class="expiration-date-container inputControl">
               <label class="expiration-date-container__label"
                 >EXP. DATE (MM/YY)</label
               >
@@ -89,6 +98,7 @@
                   class="expiry-input"
                   required
                 />
+                <div class="error"></div>
                 <input
                   type="text"
                   id="expyear"
@@ -97,22 +107,32 @@
                   class="expiry-input"
                   required
                 />
+                <div class="error"></div>
               </div>
             </div>
             <div class="cvc-container">
-              <label for="cvc" class="cvc-container__label">CVC</label>
-              <input
-                type="text"
-                id="cvc"
-                name="cvc"
-                placeholder="e.g. 123"
-                class="cvc-input"
-                required
-              />
+              <div class="inputControl">
+                <label for="cvc" class="cvc-container__label">CVC</label>
+                <input
+                  type="text"
+                  id="cvc"
+                  name="cvc"
+                  placeholder="e.g. 123"
+                  class="cvc-input"
+                  required
+                />
+                <div class="error"></div>
+              </div>
             </div>
           </div>
-          <button type="submit" value="Confirm" class="btn">Confirm</button>
+          <button type="submit" class="btn">Confirm</button>
         </form>
+        <div class="thank-you-message">
+          <img src="./images/icon-complete.svg">
+          <h2>Thank you!</h2>
+          <p>We've added your card details</p>
+          <button type="submit" value="Continue" class="btn">Continue</button>
+        </div>
       </section>
     </section>
     <footer>
