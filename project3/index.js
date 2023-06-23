@@ -107,4 +107,5 @@ const resetForm = () => {
   const successMessage = document.querySelector(".thank-you-message");
   successMessage.style.display = "none";
   form.reset();
+  location.reload(); // using this until we can reset data binding
 };
