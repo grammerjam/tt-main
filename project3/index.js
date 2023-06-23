@@ -30,7 +30,7 @@ const setSuccess = (element) => {
 
 const validateInputs = () => {
   const cardholderNameValue = cardholderNameInput.value.trim();
-  const cardNumberValue = cardNumberInput.value.trim();
+  const cardNumberValue = cardNumberInput.value.replace(/\s+/g, "");
   const expiryValue = expiryInput.value.trim();
   const expyearValue = expyearInput.value.trim();
   const cvcValue = cvcInput.value.trim();
