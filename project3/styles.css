@@ -27,6 +27,7 @@ html {
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 h1,
@@ -343,10 +344,11 @@ form {
 }
 
 .expiry-input {
-  width: 50%;
+  width: 60%;
 }
 
 input[type="text"] {
+  margin-right: 5px;
   padding: 12px;
   border: 1px solid var(--light-gray);
   border-radius: 6px;
@@ -361,6 +363,7 @@ input[type="text"] {
 .cvc-container {
   display: flex;
   flex-direction: column;
+  width: 60%;
 }
 
 .cvc-container__label {
@@ -368,7 +371,7 @@ input[type="text"] {
 }
 
 .cvc-input {
-  width: 50%;
+  width: 100%;
 }
 
 label {
