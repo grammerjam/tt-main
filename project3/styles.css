@@ -6,6 +6,7 @@
   ); /* (active input border) */
   --red: #ff5252; /*(input errors)*/
   --white: #ffffff;
+  --light-gray: #d3d3d3;
   --light-grayish-violet: #dedddf;
   --dark-grayish-violet: #8e8593;
   --very-dark-violet: #21092f;
@@ -113,7 +114,8 @@ nav {
   flex-direction: column;
   width: 50%; */
 /* } */
-*/ .card-container {
+
+.card-container {
   z-index: 3;
   display: flex;
   flex-direction: column-reverse;
@@ -208,21 +210,21 @@ nav {
   left: 15em;
 }
 
-.form {
-  display: flex;
+form {
+  font-size: 12px;
+  /* display: flex;
   justify-content: center;
   width: 50%;
-  font-size: 1.125rem;
   width: 600px;
   @media screen and (min-width: 992px) {
     width: 50%;
-  }
+  } */
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  padding: 0 20px;
 }
 
 .card-container {
@@ -331,7 +333,9 @@ nav {
   flex-direction: column;
 }
 .expiration-date-container__label {
-  white-space: nowrap;
+  margin-bottom: 12px;
+  /* font-size: 12px;
+  white-space: nowrap;  */
 }
 
 .expiration-date-container__boxes {
@@ -344,12 +348,31 @@ nav {
 
 input[type="text"] {
   padding: 12px;
-  border: 1px solid var(--black);
-  border-radius: 3px;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+  font-size: 12px;
+  margin-bottom: 20px;
 }
 
 .input-boxes {
   width: 100%;
+}
+
+.cvc-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.cvc-container__label {
+  margin-bottom: 12px;
+}
+
+.cvc-input {
+  width: 50%;
+}
+
+label {
+  display: block;
 }
 
 .btn {

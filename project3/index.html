@@ -70,7 +70,6 @@
           />
 
           <div class="card-details-container">
-            <!-- <div class=""> -->
             <div class="expiration-date-container">
               <label class="expiration-date-container__label"
                 >EXP. DATE (MM/YYY)</label
@@ -92,11 +91,16 @@
                 />
               </div>
             </div>
-            <div>
-              <label for="cvc">CVC</label>
-              <input type="text" id="cvc" name="cvc" placeholder="e.g 123" />
+            <div class="cvc-container">
+              <label for="cvc" class="cvc-container__label">CVC</label>
+              <input
+                type="text"
+                id="cvc"
+                name="cvc"
+                placeholder="e.g 123"
+                class="cvc-input"
+              />
             </div>
-            <!-- </div> -->
           </div>
           <button type="submit" value="Confirm" class="btn">Confirm</button>
         </form>
