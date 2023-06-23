@@ -1,12 +1,12 @@
 const form = document.getElementById("form");
-const cardholderName = document.getElementById("cardholder-name");
-const cardNumber = document.getElementById("card-number");
-const expiry = document.getElementById("expiry");
-const expyear = document.getElementById("expyear");
+const cardholderNameInput = document.getElementById("cardholderName");
+const cardNumberInput = document.getElementById("cardNumber");
+const expiryInput = document.getElementById("expiry");
+const expyearInput = document.getElementById("expyear");
+const cvcInput = document.getElementById("cvc");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
   validateInputs();
 });
 
@@ -29,39 +29,55 @@ const setSuccess = (element) => {
 };
 
 const validateInputs = () => {
-  const cardholderName = cardholderName.value.trim();
-  const cardNumber = cardNumber.value.trim();
-  const expiry = expiry.value.trim();
-  const expyear = expyear.value.trim();
-  const cvc = cvc.value.trim();
+  const cardholderNameValue = cardholderNameInput.value.trim();
+  const cardNumberValue = cardNumberInput.value.trim();
+  const expiryValue = expiryInput.value.trim();
+  const expyearValue = expyearInput.value.trim();
+  const cvcValue = cvcInput.value.trim();
 
-  if (cardholderName === "") {
-    setError(cardholderName, "Cardholder Name is required");
+  if (cardholderNameValue === "") {
+    setError(cardholderNameInput, "Can't be blank");
+  } else if (cardholderNameValue.length !== 2) {
+    setError(cardholderNameInput, "Must be at least 2 letters");
   } else {
-    setSuccess(cardholderName);
+    setSuccess(cardholderNameInput);
   }
 
-  if (cardNumber === "") {
-    setError(cardNumber, "cardNumber is required");
-  } else if (!isValidEmail(emailValue)) {
-    setError(email, "Provide a valid email address");
+  if (cardNumberValue === "") {
+    setError(cardNumberInput, "Can't be blank");
+  } else if (/\D/.test(cardNumberValue)) {
+    setError(cardNumberInput, "Wrong format, numbers only");
   } else {
-    setSuccess(email);
+    setSuccess(cardNumberInput);
   }
 
-  if (expiry === "") {
-    setError(expiry, "Expiration Month is required");
-  } else if (expiry.length === 2) {
-    setError(expiry, "Expiration Month must be at 2 numbers.");
+  if (cvcValue === "") {
+    setError(cvcInput, "CVC is required");
+  } else if (cvcValue.length !== 3) {
+    setError(cvcInput, "Must be 3 numbers");
+  } else if (/\D/.test(cvcValue)) {
+    setError(cvcInput, "Wrong format, numbers only");
   } else {
-    setSuccess(expiry);
+    setSuccess(cvcInput);
   }
 
-  if (expyear === "") {
-    setError(expyear, "Expiration Year is required");
-  } else if (expyear.length === 2) {
-    setError(expyear, "Expiration Year must be at 2 numbers.");
+  if (expiryValue === "") {
+    setError(expiryInput, "Can't be blank");
+  } else if (/\D/.test(expiryValue)) {
+    setError(expiryInput, "Wrong format, numbers only");
+  } else if (expiryValue.length !== 2) {
+    setError(expiryInput, "Must be 2 numbers");
   } else {
-    setSuccess(expyear);
+    setSuccess(expiryInput);
+  }
+
+  if (expyearValue === "") {
+    setError(expyearInput, "Can't be blank");
+  } else if (/\D/.test(expyearValue)) {
+    setError(expyearInput, "Wrong format, numbers only");
+  } else if (expyearValue.length !== 2) {
+    setError(expyearInput, "Must be 2 numbers");
+  } else {
+    setSuccess(expyearInput);
   }
 };

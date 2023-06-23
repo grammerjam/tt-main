@@ -386,5 +386,18 @@ footer p {
 
 .error {
   color: #ff3860;
-  font-size: 15px;
+  font-size: 12px;
+}
+
+.input-control.error input {
+  border-color: #ff3860;
+}
+
+.input-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-size: 12px;
+  padding: 10px;
+  width: 100%;
 }
