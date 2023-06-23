@@ -201,7 +201,7 @@ nav {
 
 form {
   font-size: 12px;
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1440px) {
     width: 50%;
     margin: auto;
   }
