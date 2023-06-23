@@ -87,6 +87,7 @@ nav {
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
+  margin-bottom: 54px;
   @media screen and (min-width: 1440px) {
     flex-direction: row;
     align-content: center;
@@ -200,6 +201,7 @@ nav {
 }
 
 form {
+  display: block;
   font-size: 12px;
   @media screen and (min-width: 1440px) {
     width: 50%;
@@ -374,13 +376,14 @@ label {
 }
 
 .thank-you-message {
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 50%;
   margin: auto;
 }
 
 .thank-you-message img {
+  display: flex;
   width: 15%;
   margin: 0 auto;
 }
