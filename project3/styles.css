@@ -382,6 +382,7 @@ label {
 }
 
 .thank-you-message img {
+  display: flex;
   width: 15%;
   margin: 0 auto;
 }

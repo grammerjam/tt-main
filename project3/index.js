@@ -101,3 +101,10 @@ const validateInputs = () => {
     successMessage.style.display = "block";
   }
 };
+
+const resetForm = () => {
+  form.style.display = "block";
+  const successMessage = document.querySelector(".thank-you-message");
+  successMessage.style.display = "none";
+  form.reset();
+};
