@@ -211,6 +211,8 @@ form {
   display: flex;
   flex-direction: column;
   padding: 0 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-container {
@@ -369,6 +371,27 @@ label {
   background-color: var(--very-dark-violet);
   border-radius: 10px;
   padding: 0.75em 2em;
+}
+
+.thank-you-message {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+}
+
+.thank-you-message img {
+  width: 15%;
+  margin: 0 auto;
+}
+
+.thank-you-message h2 {
+  text-transform: uppercase;
+  color: hsl(278, 68%, 11%);
+}
+
+.thank-you-message p {
+  color: hsl(0, 0%, 48%);
 }
 
 footer {
