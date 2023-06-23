@@ -52,6 +52,9 @@ const validateInputs = () => {
   } else if (/\D/.test(cardNumberValue)) {
     setError(cardNumberInput, "Wrong format, numbers only");
     hasErrors = true;
+  } else if (cardNumberValue.length < 16 || cardNumberValue.length > 19) {
+    setError(cardNumberInput, "Invalid length");
+    hasErrors = true;
   } else {
     setSuccess(cardNumberInput);
   }
