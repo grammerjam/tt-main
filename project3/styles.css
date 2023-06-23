@@ -87,7 +87,7 @@ nav {
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
-  padding-bottom: 15px;
+  margin-bottom: 54px;
   @media screen and (min-width: 1440px) {
     flex-direction: row;
     align-content: center;
