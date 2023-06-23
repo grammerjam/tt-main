@@ -39,7 +39,7 @@ const validateInputs = () => {
   if (cardholderNameValue === "") {
     setError(cardholderNameInput, "Can't be blank");
     hasErrors = true;
-  } else if (cardholderNameValue.length <= 2) {
+  } else if (cardholderNameValue.length < 2) {
     setError(cardholderNameInput, "Must be at least 2 letters");
     hasErrors = true;
   } else {
