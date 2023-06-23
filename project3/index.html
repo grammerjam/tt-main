@@ -21,6 +21,9 @@
       rel="stylesheet"
     />
 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script defer src="./index.js"></script>
+
     <title>Project 3 - Team Blue Steel</title>
 
     <style></style>
@@ -50,7 +53,7 @@
         </div>
       </section>
       <section class="form-container">
-        <form action="submit">
+        <form action="/" novalidate id="form">
           <label for="cardholder-name">CARDHOLDER NAME</label><br />
           <input
             type="text"
@@ -60,6 +63,7 @@
             placeholder="e.g. Jane Appleseed"
             required
           /><br />
+          <div class="error"></div>
 
           <label for="card-number">CARD NUMBER</label><br />
           <input
@@ -111,7 +115,7 @@
               />
             </div>
           </div>
-          <button type="submit" value="Confirm" class="btn">Confirm</button>
+          <button type="submit" class="btn">Confirm</button>
         </form>
       </section>
     </section>
