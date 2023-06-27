@@ -19,8 +19,10 @@ const CardForm = () => {
 
         <Form.Group className="mb-3" controlId="formExpirationDate">
           <Form.Label>EXPIRATION DATE (MM/YY)</Form.Label>
-          <Form.Control type="text" placeholder="MM" />
-          <Form.Control type="text" placeholder="YY" />
+          <div className="form__expiration-container">
+            <Form.Control type="text" placeholder="MM" />
+            <Form.Control type="text" placeholder="YY" />
+          </div>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formCVC">

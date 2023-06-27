@@ -30,6 +30,9 @@ body {
 }
 
 .form {
+  &__expiration-container {
+    display: flex;
+  }
   &__btn {
     width: 100%;
     color: var(--white);
