@@ -23,10 +23,13 @@ body {
 }
 
 .form {
-  $root: &;
   &__btn {
-    background-color: red;
-    font-size: 20px;
+    width: 100%;
+    color: var(--white);
+    background-color: var(--very-dark-violet);
+    border-radius: 10px;
+    padding: 0.75em 2em;
+    border-style: none;
     font: {
       family: var(--font);
     }
