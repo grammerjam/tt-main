@@ -2,6 +2,13 @@
 @import "~bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
 /* Globals */
 :root {
   --linear-gradient: linearGradient(
