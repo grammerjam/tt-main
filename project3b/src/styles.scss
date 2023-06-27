@@ -1,6 +1,44 @@
 /* The following line can be included in a src/App.scss */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Globals */
+:root {
+  --linear-gradient: linearGradient(
+    #6448fe,
+    #600594
+  ); /* (active input border) */
+  --red: #ff5252; /*(input errors)*/
+  --white: #ffffff;
+  --light-gray: #d3d3d3;
+  --light-grayish-violet: #dedddf;
+  --dark-grayish-violet: #8e8593;
+  --very-dark-violet: #21092f;
+  --black: #222222;
+  --font: "Space Grotesk", sans-serif;
+}
 
 body {
-  background-color: green;
+  // background-color: green;
+}
+
+.form {
+  &__btn {
+    width: 100%;
+    color: var(--white);
+    background-color: var(--very-dark-violet);
+    border-radius: 10px;
+    padding: 0.75em 2em;
+    border-style: none;
+    font: {
+      family: var(--font);
+    }
+  }
 }
