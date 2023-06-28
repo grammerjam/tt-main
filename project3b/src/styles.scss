@@ -212,7 +212,15 @@ nav {
 }
 
 .thank-you-message {
-  display: none;
+  // display: none;
+  display: block;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+}
+
+.thank-you-message-show {
+  // display: block;
   flex-direction: column;
   width: 50%;
   margin: auto;
