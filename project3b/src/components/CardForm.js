@@ -20,7 +20,7 @@ const CardForm = () => {
   };
 
   return (
-    <Container>
+    <Container className="form-container">
       <Form
         className="form"
         noValidate
