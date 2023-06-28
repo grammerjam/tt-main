@@ -1,11 +1,10 @@
 // import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
-import "../styles.scss";
 
 const CardForm = () => {
   return (
-    <Container>
+    <Container className="form-container">
       <Form className="form">
         <Form.Group className="mb-3" controlId="formCardholderName">
           <Form.Label>CARDHOLDER NAME</Form.Label>
