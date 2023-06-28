@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
-import "../styles.scss";
 
 const CardForm = () => {
   const [validated, setValidated] = useState(false);
