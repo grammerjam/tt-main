@@ -8,7 +8,6 @@ const CardForm = () => {
   const [validated, setValidated] = useState(false);
 
   const resetForm = (e) => {
-    window.alert("hello");
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
       e.preventDefault();
@@ -16,6 +15,7 @@ const CardForm = () => {
     }
 
     setValidated(true);
+    // window.alert("hello");
   };
 
   return (
