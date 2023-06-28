@@ -25,7 +25,6 @@
   --font: "Space Grotesk", sans-serif;
 }
 
-
 #root {
   overflow-x: hidden;
   display: flex;
@@ -39,7 +38,6 @@
     background-size: contain;
   }
 }
-
 
 nav {
   background-color: #fff;
@@ -84,7 +82,6 @@ nav {
     overflow: auto;
   }
 }
-
 
 .card-container {
   z-index: 3;
@@ -182,7 +179,9 @@ nav {
 }
 
 .form {
-  max-width: 500px;
+  @media screen and (min-width: 1440px) {
+    max-width: 500px;
+  }
   &__expiration-container {
     display: flex;
     gap: 0.5rem;
@@ -229,7 +228,6 @@ nav {
 .thank-you-message p {
   color: hsl(0, 0%, 48%);
 }
-
 
 footer {
   padding: 1em;
