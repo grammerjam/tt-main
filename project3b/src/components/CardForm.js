@@ -110,7 +110,7 @@ const CardForm = () => {
           </Form>
         </Container>
       )}
-      ;{submitForm && validated && <ThankYouMessage />}
+      {submitForm && validated && <ThankYouMessage />}
     </>
   );
 };
