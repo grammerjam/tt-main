@@ -29,11 +29,16 @@ const CardForm = () => {
         /^(0[1-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]|6[0-9]|7[0-9]|8[0-9]|9[0-9])$/,
         "2 numbers"
       )
-      .min(
-        String(new Date().getFullYear() + 10).slice(-2),
-        "Year should be 10 yrs from now or later"
+      .test(
+        "expirationYear",
+        "Year should be 10 yrs from now or later",
+        (value) => {
+          const currentYear = new Date().getFullYear();
+          const minYear = currentYear + 10;
+          return Number(value) + 2000 >= minYear;
+        }
       )
-      .required("Expiration year is required"),
+      .required("Required"),
     cvc: Yup.string()
       .matches(/^\d+$/, "Only numbers are allowed")
       .required("Required"),
@@ -47,12 +52,19 @@ const CardForm = () => {
           initialValues={{
             cardholderName: "",
             cardNumber: "",
-            expirationMonth: 0,
+            expirationMonth: "",
             expirationYear: "",
-            cvc: 0,
+            cvc: "",
           }}
         >
-          {({ handleSubmit, handleChange, values, errors }) => (
+          {({
+            handleSubmit,
+            handleChange,
+            values,
+            handleBlur,
+            touched,
+            errors,
+          }) => (
             <Form className="form" noValidate onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formCardholderName">
                 <Form.Label>CARDHOLDER NAME</Form.Label>
@@ -62,10 +74,11 @@ const CardForm = () => {
                   placeholder="e.g. Jane Appleseed"
                   value={values.cardholderName}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   isInvalid={!!errors.cardholderName}
                 />
                 <Form.Control.Feedback type="invalid">
-                  {errors.cardholderName}
+                  {touched.cardholderName && errors.cardholderName}
                 </Form.Control.Feedback>
               </Form.Group>
 
@@ -78,10 +91,11 @@ const CardForm = () => {
                   placeholder="e.g. 1234 5678 9123 0000"
                   value={values.cardNumber}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   isInvalid={!!errors.cardNumber}
                 />
                 <Form.Control.Feedback type="invalid">
-                  {errors.cardNumber}
+                  {touched.cardNumber && errors.cardNumber}
                 </Form.Control.Feedback>
               </Form.Group>
 
@@ -97,10 +111,11 @@ const CardForm = () => {
                         name="expirationMonth"
                         value={values.expirationMonth}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         isInvalid={!!errors.expirationMonth}
                       />
                       <Form.Control.Feedback type="invalid">
-                        {errors.expirationMonth}
+                        {touched.expirationMonth && errors.expirationMonth}
                       </Form.Control.Feedback>
                     </div>
                     <div>
@@ -111,10 +126,11 @@ const CardForm = () => {
                         maxLength={2}
                         value={values.expirationYear}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         isInvalid={!!errors.expirationYear}
                       />
                       <Form.Control.Feedback type="invalid">
-                        {errors.expirationYear}
+                        {touched.expirationYear && errors.expirationYear}
                       </Form.Control.Feedback>
                     </div>
                   </div>
@@ -130,10 +146,11 @@ const CardForm = () => {
                     placeholder="e.g. 123"
                     value={values.cvc}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     isInvalid={!!errors.cvc}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {errors.cvc}
+                    {touched.cvc && errors.cvc}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Stack>
