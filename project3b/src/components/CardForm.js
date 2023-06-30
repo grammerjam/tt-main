@@ -134,70 +134,75 @@ const CardForm = ({
                 </Form.Group>
 
                 <Stack direction="horizontal" gap={3}>
-                  <Form.Group className="mb-3" controlId="formExpirationDate">
-                    <Form.Label>EXPIRATION DATE (MM/YY)</Form.Label>
-                    <div className="form__expiration-container">
-                      <div>
-                        <Form.Control
-                          maxLength={2}
-                          type="text"
-                          placeholder="MM"
-                          name="expirationMonth"
-                          value={values.expirationMonth}
-                          onChange={(e) => {
-                            setExpiryMonth(e.target.value);
-                            handleChange(e);
-                          }}
-                          onBlur={handleBlur}
-                          isInvalid={!!errors.expirationMonth}
-                        />
-                        <Form.Control.Feedback type="invalid">
-                          {touched.expirationMonth && errors.expirationMonth}
-                        </Form.Control.Feedback>
+                  <Stack
+                    direction="horizontal"
+                    gap={2}
+                    className="align-items-baseline"
+                  >
+                    <Form.Group className="mb-3" controlId="formExpirationDate">
+                      <Form.Label>EXPIRATION DATE (MM/YY)</Form.Label>
+                      <div className="form__expiration-container">
+                        <div>
+                          <Form.Control
+                            maxLength={2}
+                            type="text"
+                            placeholder="MM"
+                            name="expirationMonth"
+                            value={values.expirationMonth}
+                            onChange={(e) => {
+                              setExpiryMonth(e.target.value);
+                              handleChange(e);
+                            }}
+                            onBlur={handleBlur}
+                            isInvalid={!!errors.expirationMonth}
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            {touched.expirationMonth && errors.expirationMonth}
+                          </Form.Control.Feedback>
+                        </div>
+                        <div>
+                          <Form.Control
+                            type="text"
+                            placeholder="YY"
+                            name="expirationYear"
+                            maxLength={2}
+                            value={values.expirationYear}
+                            onChange={(e) => {
+                              setExpiryYear(e.target.value);
+                              handleChange(e);
+                            }}
+                            onBlur={handleBlur}
+                            isInvalid={!!errors.expirationYear}
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            {touched.expirationYear && errors.expirationYear}
+                          </Form.Control.Feedback>
+                        </div>
                       </div>
-                      <div>
-                        <Form.Control
-                          type="text"
-                          placeholder="YY"
-                          name="expirationYear"
-                          maxLength={2}
-                          value={values.expirationYear}
-                          onChange={(e) => {
-                            setExpiryYear(e.target.value);
-                            handleChange(e);
-                          }}
-                          onBlur={handleBlur}
-                          isInvalid={!!errors.expirationYear}
-                        />
-                        <Form.Control.Feedback type="invalid">
-                          {touched.expirationYear && errors.expirationYear}
-                        </Form.Control.Feedback>
-                      </div>
-                    </div>
-                  </Form.Group>
+                    </Form.Group>
 
-                  <Form.Group className="mb-3" controlId="formCVC">
-                    <Form.Label>CVC</Form.Label>
+                    <Form.Group className="mb-3" controlId="formCVC">
+                      <Form.Label>CVC</Form.Label>
 
-                    <Form.Control
-                      type="text"
-                      name="cvc"
-                      maxLength={3}
-                      placeholder="e.g. 123"
-                      value={values.cvc}
-                      onChange={(e) => {
-                        setCvc(e.target.value);
-                        handleChange(e);
-                      }}
-                      onBlur={handleBlur}
-                      isInvalid={!!errors.cvc}
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      {touched.cvc && errors.cvc}
-                    </Form.Control.Feedback>
-                  </Form.Group>
+                      <Form.Control
+                        type="text"
+                        name="cvc"
+                        maxLength={3}
+                        placeholder="e.g. 123"
+                        value={values.cvc}
+                        onChange={(e) => {
+                          setCvc(e.target.value);
+                          handleChange(e);
+                        }}
+                        onBlur={handleBlur}
+                        isInvalid={!!errors.cvc}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {touched.cvc && errors.cvc}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                  </Stack>
                 </Stack>
-
                 <button className="form__btn" type="submit">
                   Submit
                 </button>

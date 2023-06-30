@@ -39,7 +39,7 @@ function App() {
       </section>
       <footer>
         <p>Start Date/Time: 6/19/2023 10:18 PM EST</p>
-        <p>End Date/Time:</p>
+        <p>End Date/Time: 6/29/2023 11:03 PM EST</p>
       </footer>
     </>
   );
