@@ -208,10 +208,13 @@ nav {
   max-width: 450px;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 75%;
   margin: auto;
   align-items: center;
   gap: 1em;
+  @media screen and (min-width: 1440px) {
+    width: 50%;
+  }
 }
 
 
