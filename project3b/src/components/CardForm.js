@@ -8,7 +8,7 @@ import * as Yup from "yup";
 import "../styles.scss";
 import ThankYouMessage from "./ThankYouMessage";
 
-const CardForm = () => {
+const CardForm = ({ cardNumber, setCardNumber, fullName, setFullName, expiryMonth, setExpiryMonth, expiryYear, setExpiryYear, cvc, setCvc }) => {
   const [isValid, setIsValid] = useState();
 
   const schema = Yup.object().shape({
@@ -55,17 +55,20 @@ const CardForm = () => {
         <Container className="form-container">
           <Formik
             validationSchema={schema}
-            onSubmit={() => {
-              // Perform form validation or any other necessary checks
-              // If the form is valid, set isValid to true
+            onSubmit={(values) => {
+              setCardNumber(values.cardNumber);
+              setFullName(values.cardholderName);
+              setExpiryMonth(values.expirationMonth);
+              setExpiryYear(values.expirationYear);
+              setCvc(values.cvc);
               setIsValid(true);
             }}
             initialValues={{
-              cardholderName: "",
-              cardNumber: "",
-              expirationMonth: "",
-              expirationYear: "",
-              cvc: "",
+              cardholderName: '',
+              cardNumber: '',
+              expirationMonth: '',
+              expirationYear: '',
+              cvc: '',
             }}
           >
             {({
@@ -84,7 +87,10 @@ const CardForm = () => {
                     name="cardholderName"
                     placeholder="e.g. Jane Appleseed"
                     value={values.cardholderName}
-                    onChange={handleChange}
+                    onChange={(e) => {
+                      setFullName(e.target.value); 
+                      handleChange(e);
+                    }}
                     onBlur={handleBlur}
                     isInvalid={!!errors.cardholderName}
                   />
@@ -101,7 +107,10 @@ const CardForm = () => {
                     maxLength={16}
                     placeholder="e.g. 1234 5678 9123 0000"
                     value={values.cardNumber}
-                    onChange={handleChange}
+                    onChange={(e) => {
+                      setCardNumber(e.target.value); 
+                      handleChange(e);
+                    }}
                     onBlur={handleBlur}
                     isInvalid={!!errors.cardNumber}
                   />
@@ -121,7 +130,10 @@ const CardForm = () => {
                           placeholder="MM"
                           name="expirationMonth"
                           value={values.expirationMonth}
-                          onChange={handleChange}
+                          onChange={(e) => {
+                            setExpiryMonth(e.target.value); 
+                            handleChange(e);
+                          }}
                           onBlur={handleBlur}
                           isInvalid={!!errors.expirationMonth}
                         />
@@ -136,7 +148,10 @@ const CardForm = () => {
                           name="expirationYear"
                           maxLength={2}
                           value={values.expirationYear}
-                          onChange={handleChange}
+                          onChange={(e) => {
+                            setExpiryYear(e.target.value); 
+                            handleChange(e);
+                          }}
                           onBlur={handleBlur}
                           isInvalid={!!errors.expirationYear}
                         />
@@ -155,7 +170,10 @@ const CardForm = () => {
                       maxLength={3}
                       placeholder="e.g. 123"
                       value={values.cvc}
-                      onChange={handleChange}
+                      onChange={(e) => {
+                        setCvc(e.target.value); 
+                        handleChange(e);
+                      }}
                       onBlur={handleBlur}
                       isInvalid={!!errors.cvc}
                     />
