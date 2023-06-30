@@ -1,6 +1,6 @@
 import "../styles.scss";
 
-const Cards = () => {
+const Cards = ({ cardNumber, fullName, expiryDate, cvc }) => {
   return (
     <section className="card-container">
       <div className="front-card-container">
@@ -8,15 +8,15 @@ const Cards = () => {
           <img src="./images/card-logo.svg" alt="credit card background" />
         </div>
         <div className="middle-row">
-          <p id="display-card-number">0000 0000 0000 0000</p>
+          <p id="display-card-number">{cardNumber}</p>
         </div>
         <div className="last-row">
-          <p id="full-name">Jane Appleseed</p>
-          <p id="date">00/00</p>
+          <p id="full-name">{fullName}</p>
+          <p id="date">{expiryDate}</p>
         </div>
       </div>
       <div className="back-card-container">
-        <p id="display-cvc">000</p>
+        <p id="display-cvc">{cvc}</p>
       </div>
     </section>
   );

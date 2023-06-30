@@ -8,45 +8,56 @@ import * as Yup from "yup";
 import "../styles.scss";
 import ThankYouMessage from "./ThankYouMessage";
 
-const CardForm = () => {
+const CardForm = ({
+  cardNumber,
+  setCardNumber,
+  fullName,
+  setFullName,
+  expiryMonth,
+  setExpiryMonth,
+  expiryYear,
+  setExpiryYear,
+  cvc,
+  setCvc,
+}) => {
   const [isValid, setIsValid] = useState();
 
   const schema = Yup.object().shape({
     cardholderName: Yup.string()
-      .min(2)
-      .max(50, "Too Long!")
-      .required("Required")
+      .min(2, "Must be at least 2 characters")
+      .max(50, "No more than 50 characters allowed")
+      .required("Required field")
       .matches(/^[a-zA-Z\s]*$/, "Only letters and white space are allowed")
       .matches(/\s/, "Cardholder name must contain whitespace")
       .trim(""),
     cardNumber: Yup.string()
-      .min(16, "Too Short!")
-      .matches(/^\d+$/, "Only numbers are allowed")
-      .required("Required"),
+      .min(19, "Must contain 16 characters")
+      .matches(/^[0-9 ]*$/)
+      .required("Required field"),
     expirationMonth: Yup.number()
-      .max(12, "max month")
-      .required("Required")
+      .max(12, "Invalid month")
+      .required("Required field")
       .moreThan(1)
-      .min(1, "min month is 01"),
+      .min(1, "Invalid month"),
     expirationYear: Yup.string()
       .matches(
         /^(0[1-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]|6[0-9]|7[0-9]|8[0-9]|9[0-9])$/,
-        "2 numbers"
+        "Invalid year"
       )
       .test(
         "expirationYear",
-        "Year should be 10 yrs from now or later",
+        "Year must be 10 years from now or later",
         (value) => {
           const currentYear = new Date().getFullYear();
           const minYear = currentYear + 10;
           return Number(value) + 2000 >= minYear;
         }
       )
-      .required("Required"),
+      .required("Required field"),
     cvc: Yup.string()
       .matches(/^\d+$/, "Only numbers are allowed")
-      .min(3)
-      .required("Required"),
+      .min(3, "CVC must be 3 characters")
+      .required("Required field"),
   });
   return (
     <>
@@ -54,7 +65,12 @@ const CardForm = () => {
         <Container className="form-container">
           <Formik
             validationSchema={schema}
-            onSubmit={() => {
+            onSubmit={(values) => {
+              setCardNumber(values.cardNumber);
+              setFullName(values.cardholderName);
+              setExpiryMonth(values.expirationMonth);
+              setExpiryYear(values.expirationYear);
+              setCvc(values.cvc);
               setIsValid(true);
             }}
             initialValues={{
@@ -81,7 +97,10 @@ const CardForm = () => {
                     name="cardholderName"
                     placeholder="e.g. Jane Appleseed"
                     value={values.cardholderName}
-                    onChange={handleChange}
+                    onChange={(e) => {
+                      setFullName(e.target.value);
+                      handleChange(e);
+                    }}
                     onBlur={handleBlur}
                     isInvalid={!!errors.cardholderName}
                   />
@@ -95,10 +114,17 @@ const CardForm = () => {
                   <Form.Control
                     type="text"
                     name="cardNumber"
-                    maxLength={16}
+                    maxLength={19} // Allow for 16 digits and 3 spaces
                     placeholder="e.g. 1234 5678 9123 0000"
                     value={values.cardNumber}
-                    onChange={handleChange}
+                    onChange={(e) => {
+                      const formattedInput = e.target.value
+                        .replace(/[^\dA-Z]/g, "")
+                        .replace(/(.{4})/g, "$1 ")
+                        .trim();
+                      setCardNumber(formattedInput);
+                      handleChange("cardNumber")(formattedInput);
+                    }}
                     onBlur={handleBlur}
                     isInvalid={!!errors.cardNumber}
                   />
@@ -123,7 +149,10 @@ const CardForm = () => {
                             placeholder="MM"
                             name="expirationMonth"
                             value={values.expirationMonth}
-                            onChange={handleChange}
+                            onChange={(e) => {
+                              setExpiryMonth(e.target.value);
+                              handleChange(e);
+                            }}
                             onBlur={handleBlur}
                             isInvalid={!!errors.expirationMonth}
                           />
@@ -138,7 +167,10 @@ const CardForm = () => {
                             name="expirationYear"
                             maxLength={2}
                             value={values.expirationYear}
-                            onChange={handleChange}
+                            onChange={(e) => {
+                              setExpiryYear(e.target.value);
+                              handleChange(e);
+                            }}
                             onBlur={handleBlur}
                             isInvalid={!!errors.expirationYear}
                           />
@@ -151,13 +183,17 @@ const CardForm = () => {
 
                     <Form.Group className="mb-3" controlId="formCVC">
                       <Form.Label>CVC</Form.Label>
+
                       <Form.Control
                         type="text"
                         name="cvc"
                         maxLength={3}
                         placeholder="e.g. 123"
                         value={values.cvc}
-                        onChange={handleChange}
+                        onChange={(e) => {
+                          setCvc(e.target.value);
+                          handleChange(e);
+                        }}
                         onBlur={handleBlur}
                         isInvalid={!!errors.cvc}
                       />
@@ -167,7 +203,6 @@ const CardForm = () => {
                     </Form.Group>
                   </Stack>
                 </Stack>
-
                 <button className="form__btn" type="submit">
                   Submit
                 </button>
