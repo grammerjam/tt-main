@@ -46,6 +46,7 @@ const CardForm = () => {
       .required("Required"),
     cvc: Yup.string()
       .matches(/^\d+$/, "Only numbers are allowed")
+      .min(3)
       .required("Required"),
   });
   return (
@@ -151,7 +152,6 @@ const CardForm = () => {
                     <Form.Control
                       type="text"
                       name="cvc"
-                      minLength={3}
                       maxLength={3}
                       placeholder="e.g. 123"
                       value={values.cvc}
