@@ -8,7 +8,18 @@ import * as Yup from "yup";
 import "../styles.scss";
 import ThankYouMessage from "./ThankYouMessage";
 
-const CardForm = ({ cardNumber, setCardNumber, fullName, setFullName, expiryMonth, setExpiryMonth, expiryYear, setExpiryYear, cvc, setCvc }) => {
+const CardForm = ({
+  cardNumber,
+  setCardNumber,
+  fullName,
+  setFullName,
+  expiryMonth,
+  setExpiryMonth,
+  expiryYear,
+  setExpiryYear,
+  cvc,
+  setCvc,
+}) => {
   const [isValid, setIsValid] = useState();
 
   const schema = Yup.object().shape({
@@ -20,8 +31,8 @@ const CardForm = ({ cardNumber, setCardNumber, fullName, setFullName, expiryMont
       .matches(/\s/, "Cardholder name must contain whitespace")
       .trim(""),
     cardNumber: Yup.string()
-      .min(16, "Too Short!")
-      .matches(/^\d+$/, "Only numbers are allowed")
+      .min(19, "Too Short!")
+      .matches(/^[0-9 ]*$/, "Only numbers and spaces are allowed")
       .required("Required"),
     expirationMonth: Yup.number()
       .max(12, "max month")
@@ -64,11 +75,11 @@ const CardForm = ({ cardNumber, setCardNumber, fullName, setFullName, expiryMont
               setIsValid(true);
             }}
             initialValues={{
-              cardholderName: '',
-              cardNumber: '',
-              expirationMonth: '',
-              expirationYear: '',
-              cvc: '',
+              cardholderName: "",
+              cardNumber: "",
+              expirationMonth: "",
+              expirationYear: "",
+              cvc: "",
             }}
           >
             {({
@@ -88,7 +99,7 @@ const CardForm = ({ cardNumber, setCardNumber, fullName, setFullName, expiryMont
                     placeholder="e.g. Jane Appleseed"
                     value={values.cardholderName}
                     onChange={(e) => {
-                      setFullName(e.target.value); 
+                      setFullName(e.target.value);
                       handleChange(e);
                     }}
                     onBlur={handleBlur}
@@ -104,13 +115,14 @@ const CardForm = ({ cardNumber, setCardNumber, fullName, setFullName, expiryMont
                   <Form.Control
                     type="text"
                     name="cardNumber"
-                    maxLength={16}
+                    maxLength={19} // Allow for 16 digits and 3 spaces
                     placeholder="e.g. 1234 5678 9123 0000"
                     value={values.cardNumber}
                     onChange={(e) => {
-                      setCardNumber(e.target.value); 
-                      handleChange(e);
-                    }}
+                      const formattedInput = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+                      setCardNumber(formattedInput); 
+                      handleChange("cardNumber")(formattedInput); 
+                  }}
                     onBlur={handleBlur}
                     isInvalid={!!errors.cardNumber}
                   />
@@ -131,7 +143,7 @@ const CardForm = ({ cardNumber, setCardNumber, fullName, setFullName, expiryMont
                           name="expirationMonth"
                           value={values.expirationMonth}
                           onChange={(e) => {
-                            setExpiryMonth(e.target.value); 
+                            setExpiryMonth(e.target.value);
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -149,7 +161,7 @@ const CardForm = ({ cardNumber, setCardNumber, fullName, setFullName, expiryMont
                           maxLength={2}
                           value={values.expirationYear}
                           onChange={(e) => {
-                            setExpiryYear(e.target.value); 
+                            setExpiryYear(e.target.value);
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -171,7 +183,7 @@ const CardForm = ({ cardNumber, setCardNumber, fullName, setFullName, expiryMont
                       placeholder="e.g. 123"
                       value={values.cvc}
                       onChange={(e) => {
-                        setCvc(e.target.value); 
+                        setCvc(e.target.value);
                         handleChange(e);
                       }}
                       onBlur={handleBlur}

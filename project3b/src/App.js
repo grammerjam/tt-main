@@ -3,7 +3,6 @@ import "./styles.scss";
 import CardForm from "./components/CardForm";
 import Cards from "./components/Cards";
 
-
 function App() {
   const [cardNumber, setCardNumber] = useState("0000 0000 0000 0000");
   const [fullName, setFullName] = useState("Jane Appleseed");
@@ -19,14 +18,14 @@ function App() {
         </div>
       </nav>
       <section className="main">
-      <Cards 
-          cardNumber={cardNumber} 
+        <Cards
+          cardNumber={cardNumber}
           fullName={fullName}
           expiryDate={`${expiryMonth}/${expiryYear}`}
           cvc={cvc}
         />
         <CardForm
-          cardNumber={cardNumber} 
+          cardNumber={cardNumber}
           setCardNumber={setCardNumber}
           fullName={fullName}
           setFullName={setFullName}
