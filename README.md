@@ -97,7 +97,7 @@ Portfolios containing contact and social's information:
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* Special thanks to Allen Tito for his mentorship and project management skills 🚀
+* Special thanks to Allan Tito for his mentorship and project management skills 🚀
 * Thank you to our senior developer mentors for reviewing our code and helping us get grow ✨
 
 
@@ -115,7 +115,7 @@ Portfolios containing contact and social's information:
 [license-url]: https://github.com/grammerjam/tt-main/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/brunomaria71 
-[linkedin-url2]: https://linkedin.com/in/username
+[linkedin-url2]: https://www.linkedin.com/in/alinagasperino
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
