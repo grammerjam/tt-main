@@ -1,6 +1,10 @@
 const mysql = require("mysql2");
 const dotenv = require("dotenv");
-const fs = require("fs");
+const express = require("express");
+const cors = require("cors");
+const app = express();
+app.use(cors());
+app.use(express.json());
 
 dotenv.config();
 
@@ -11,15 +15,15 @@ let connection = mysql.createConnection({
   database: process.env.DB_NAME, // The name of your database
 });
 
-fs.readFile("../db/setup.sql", "utf8", function (err, data) {
-  if (err) throw err;
-  console.log("Received data successfully");
+const sqlQueries = {
+  getTable: `SELECT * FROM users;`,
+};
 
-  connection.query(data, function (err, results) {
-    if (err) throw err;
-    console.log("Executed SQL script successfully");
-
-    // Close connection
+const executeQuery = (sqlQueries) => {
+  connection.query(sqlQueries, function (err) {
+    if (err) {
+      console.log("not connected :()");
+    } else executeQuery(sqlQueries.getTable) && console.log("we did it!");
     connection.end();
   });
-});
+};
